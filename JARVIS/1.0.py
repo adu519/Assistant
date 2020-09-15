@@ -17,7 +17,7 @@ import time
 
 
 engine = pyttsx3.init()
-wolframalpha_app_id = "3WGWL8-ETQV5AV4PW"
+wolframalpha_app_id = ""#use your own  
 
 
 def speak(audio):
@@ -56,7 +56,7 @@ def wishme():
     else:
         speak("Good Night Sir!!")
 
-    speak("Alfred at your service Please tell me how can I help you today?")
+    speak("RamuKaka at your service Please tell me how can I help you today?")
 
 
 def TakeCommand():
@@ -83,8 +83,8 @@ def sendEmail(to, content):
     server.ehlo()
     server.starttls()
 
-    server.login('foodfunkhana@gmail.com', '1234@qwerty')
-    server.sendmail('foodfunkhana@gmail.com', to, content)
+    server.login('sender's mailid', 'password')
+    server.sendmail('sender's mailid', to, content)
     server.close()
 
 def screenshot():
@@ -104,10 +104,9 @@ def joke():
     speak(pyjokes.get_joke())
 
 def intro():
-    speak("I am Alfred,I  am Adi's Creation and Personal Assistant ")
+    speak("I am Ramukaka,I am Adi's Creation and his Personal Assistant ")
 
-def rahul():
-    speak("he is very handsome guy. My creator is one of his closest friends")
+
 
 
 if __name__ == "__main__":
@@ -240,7 +239,7 @@ if __name__ == "__main__":
 
         elif 'news' in query:
             try:
-                jsonObj = urlopen("http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=cebae6a5a30b4e9ebd50808e2eff16ed")
+                jsonObj = urlopen("use own news api")
                 data = json.load(jsonObj)
                 i=1
 
@@ -308,6 +307,5 @@ if __name__ == "__main__":
         elif 'tell me about yourself' in query:
             intro()
 
-        elif 'rahul' in query:
-            rahul()
+       
 
