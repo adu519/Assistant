@@ -297,7 +297,7 @@ if __name__ == "__main__":
             os.system("shutdown /s /t 1")
 
         elif 'who am i' in query:
-            speak("if you can talk then definitely are human ")
+            speak("if you can talk then definitely you are human ")
 
 
 
