@@ -14,6 +14,7 @@ import requests
 from urllib.request import urlopen
 import wolframalpha
 import time
+import cv2
 
 
 engine = pyttsx3.init()
@@ -306,6 +307,18 @@ if __name__ == "__main__":
 
         elif 'tell me about yourself' in query:
             intro()
+                    
+        elif 'take picture' in query:
+                    video=cv2.VideoCapture(0)
+                    while True:
+                        check,frame =video.read()
+                        cv2.imshow("Master",frame)
+                        cv2.waitKey(0)
+                        time.sleep(5)
+                    video.release()
+                    cv2.destroyAllWindows()
+                    
+                    
 
        
 
