@@ -15,6 +15,7 @@ from urllib.request import urlopen
 import wolframalpha
 import time
 import cv2
+from twilio.rest import Client
 
 
 engine = pyttsx3.init()
@@ -317,6 +318,32 @@ if __name__ == "__main__":
                         time.sleep(5)
                     video.release()
                     cv2.destroyAllWindows()
+        elif 'whatsapp me' in query:
+            speak("What is your message")
+            ans=TakeCommand()
+            account_sid = ''#your account id
+            auth_token = ''#your token
+            client = Client(account_sid, auth_token)
+
+            message = client.messages.create(
+                from_='whatsapp:#number from twilio',
+                body=ans,
+                to='whatsapp:#your number'
+
+            )
+
+            print(message.sid)
+
+        elif "call me" in query:
+            account_sid = ''
+            auth_token = ''
+            client = Client(account_sid, auth_token)
+            call=client.calls.create(
+                url='http://demo.twilio.com/docs/voice.xml',
+                to ='',
+                from_=''
+            )
+            print(call.sid)
                     
                     
 
