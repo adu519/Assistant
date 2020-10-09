@@ -345,18 +345,7 @@ if __name__ == "__main__":
             )
             print(call.sid)
                     
-         elif "message me" in query:
-                    account_sid = ''
-                    auth_token = 'your_auth_token'
-                    client = Client(account_sid, auth_token)
-
-                                message = client.messages.create(
-                                        body="Join Earth's mightiest heroes. Like Kevin Bacon.",
-                                        from_='',
-                                        to=''
-                 )
-
-                 print(message.sid)
+     
                     
                     
 
