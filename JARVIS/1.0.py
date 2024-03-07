@@ -303,8 +303,7 @@ if __name__ == "__main__":
 
 
 
-        elif 'what is love' in query:
-            speak("I told you not to watch romantic movies")
+        )
 
         elif 'tell me about yourself' in query:
             intro()
